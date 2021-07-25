@@ -1,0 +1,41 @@
+
+import java.util.*;
+class stack
+{
+public static void main(String args[])
+{
+Scanner s=new Scanner(System.in);
+String str=new String();
+String ans=new String();
+Stack<Character> st=new Stack<Character>();
+str=s.nextLine();
+char[] ch=str.toCharArray();
+int flag=1;
+for(char i:ch)
+{
+  if(i =='[' || i=='{' || i=='(')
+       {
+            st.push(i);
+        }
+        else if(i==']' && !st.empty() && st.peek()=='[')
+            {
+                st.pop();
+            }
+       else if(i=='}' && !st.empty() && st.peek()=='{')
+	 {
+	   st.pop();
+	     }
+else if(i==')' && !st.empty() && st.peek()=='(')
+            {
+                st.pop();
+            }
+      else{
+                flag=0;
+            }
+        
+    }
+	    
+ System.out.println((!st.empty()|| flag==0)?"NO":"YES");
+
+}
+}
