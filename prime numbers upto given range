@@ -1,0 +1,33 @@
+import java.util.Scanner;
+ class main
+{
+   public static void main(String[] args) 
+   {
+      int i, n;
+      System.out.print(" Enter number: ");
+      Scanner sc = new Scanner(System.in);
+      n = sc.nextInt();
+      for(i = 2; i< n; ++i)
+      {
+         if(Prime(i))
+         {
+            System.out.println(i);
+         }
+      }
+      sc.close();
+   }
+   public static boolean Prime(int num)
+   {
+      int a;
+      boolean Prime = true;
+      for(a = 2; a < num / 2; a++)
+      {
+         if(num%a == 0)
+         {
+            Prime = false;
+            break;
+         }
+      }
+      return Prime;
+   }
+}
